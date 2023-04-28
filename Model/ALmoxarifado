@@ -1,0 +1,34 @@
+using Controller;
+
+namespace Model
+{
+    public class Almoxarifado
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Quantidade { get; private set; }
+
+        public Almoxarifado(
+            string nome,
+            String quantidade
+        ) {
+            this.Nome = nome;
+            this.Quantidade = quantidade;
+
+            Conexao conexao = new Conexao();
+            conexao.Almoxarifado.Add(this);
+            conexao.SaveChanges();
+        }
+
+        public Almoxarifado()
+        {
+
+        }
+
+        public static List<Almoxarifado> ListarAlx() {
+            Conexao conexao = new Conexao();
+            return conexao.Almoxarifado.ToList();
+        }
+
+    }
+}

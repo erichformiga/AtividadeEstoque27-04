@@ -1,3 +1,5 @@
+using Controller;
+
 namespace Model
 {
     public class Produto
@@ -27,5 +29,6 @@ namespace Model
             Conexao conexao = new Conexao();
             return conexao.Produtos.ToList();
         }
+
     }
 }

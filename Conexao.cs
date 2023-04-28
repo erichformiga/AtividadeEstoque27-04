@@ -8,6 +8,7 @@ public class Conexao : DbContext
             => options.UseMySql(conn, ServerVersion.AutoDetect(conn));
 
     public DbSet<Model.Produto> Produtos { get; set; }
+    public DbSet<Model.Produto> Almoxarifado { get; internal set; }
 
     internal int ExecuteNonQuery()
     {
